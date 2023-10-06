@@ -32,7 +32,7 @@ try {
   difficultySelectForm.addEventListener(`submit`, function (event) {
     event.preventDefault();
     const difficultySelect = document.getElementById(`difficulty`).value;
-    start(difficultySelect, function(){
+    game.start(difficultySelect, function(){
       startWrapper.style.display = 'none';
       gameWrapper.style.display = 'block';
       wordHolderText.textContent = game.getWordHolderText();
@@ -78,7 +78,10 @@ try {
   // add a click Event Listener to the resetGame button
   //    show the startWrapper
   //    hide the gameWrapper
-  resetGame.addEventListener(`click`, function (e) {});
+  resetGame.addEventListener(`click`, function (e) {
+    startWrapper.style.display = 'block';
+    gameWrapper.style.display = 'none';
+  });
 } catch (error) {
   console.error(error);
   alert(error);
