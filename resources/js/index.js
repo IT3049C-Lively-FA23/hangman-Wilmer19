@@ -32,7 +32,7 @@ try {
   difficultySelectForm.addEventListener(`submit`, function (event) {
     event.preventDefault();
     const difficultySelect = document.getElementById(`difficulty`).value;
-    game.start(difficultySelect, function(){
+    start(difficultySelect, function(){
       startWrapper.style.display = 'none';
       gameWrapper.style.display = 'block';
       wordHolderText.textContent = game.getWordHolderText();
@@ -53,7 +53,27 @@ try {
   //      2. disable the guessButton
   //      3. show the resetGame button
   // if the game is won or lost, show an alert.
-  guessForm.addEventListener(`submit`, function (e) {});
+  guessForm.addEventListener(`submit`, function (e) {
+    e.preventDefault();
+    const guess = guessInput.value;
+    game.guess(guess);
+
+    wordHolderText.textContent = game.getWordHolderText();
+    guessesText.textContent = game.getGuessesText();
+    guessInput.value = '';
+
+    if (game.isOver){
+      guessInput.disabled = true;
+      guessButton.disabled = true;
+      resetGameButton.style.display = 'block';
+    }
+
+    if (game.isOver && game.didWin){
+      alert('You won the game!');
+    } else if (game.isOver && !game.didWin){
+      alert("Oops.. you lost the game!");
+    }
+  });
 
   // add a click Event Listener to the resetGame button
   //    show the startWrapper
