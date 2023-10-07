@@ -37,6 +37,14 @@ class Hangman {
     // reset this.guesses to empty array
     // reset this.isOver to false
     // reset this.didWin to false
+    this.getRandomWord(difficulty)
+    .then(word => {
+      this.word = word;
+      this.guesses = [];
+      this.isOver = false;
+      this.didWin = false;
+      next();
+    })
   }
 
   /**
