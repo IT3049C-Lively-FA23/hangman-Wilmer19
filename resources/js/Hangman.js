@@ -121,8 +121,16 @@ class Hangman {
    * It will have underscores in the correct number and places of the un-guessed letters.
    * i.e.: if the word is BOOK, and the letter O has been guessed, this would return _ O O _
    */
-  getWordHolderText() {
-    return;
+  getWordHolderText(word, guesses) {
+    let placeholder = "";
+    for (let letter of word){
+      if (guesses.includes(letter)){
+        placeholder += letter + " ";
+      } else {
+        placeholder += "_ ";
+      }
+    }
+    return placeholder.trim();
   }
 
   /**
