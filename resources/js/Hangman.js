@@ -139,8 +139,8 @@ class Hangman {
    * (Guesses: A, B, C)
    * Hint: use the Array.prototype.join method.
    */
-  getGuessesText() {
-    return ``;
+  getGuessesText(guesses) {
+    return `(Guesses: ${guesses.join(",")})`;
   }
 
   /**
