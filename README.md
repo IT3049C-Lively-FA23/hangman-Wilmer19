@@ -7,14 +7,22 @@ Instructions to this assignment can be found [here](https://reedws.github.io/IT3
 
 - [x] update the assignment checks above to the correct link. - Done Automatically
 - [x] update the assignment checks above to the correct link. - Done Automatically
-- [ ] make sure the assignment checks pass
-- [ ] fill out the self evaluation and Reflection
-- [ ] submit the repository link on Canvas
+- [X] make sure the assignment checks pass
+- [X] fill out the self evaluation and Reflection
+- [X] submit the repository link on Canvas
 
 ## Self-Evaluation:
 
 how many points out of 20 do you deserve on this assignment:
+I deserve 10 out of 20 points. Even though my program isn't working at all, I atleast attempted it. I did 
+go to the IT learning center and received help. When I comment out lines 1-10 in my Hangman.js, my program 
+does run but has some issues when I insert a letter. When I try to debug the program, I noticed it is 
+picking up some of my code.
 
 ## Self-Reflection:
+This assignment was challenging and I could've done better. I had a lot of personal stuff going 
+on the week which led me to not have enough time. I understand that I will lose points for submitting late 
+but I would rather have some points than none. I will learn from this and do better for any future assignments.
 
 ### How long it took me to finish this?
+5 hours
