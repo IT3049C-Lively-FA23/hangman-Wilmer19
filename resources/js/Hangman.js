@@ -1,13 +1,13 @@
 class Hangman {
-  // constructor(_canvas) {
-  //    if (!_canvas) {
-  //      throw new Error(`invalid canvas provided`);
+  constructor(_canvas) {
+     if (!_canvas) {
+       throw new Error(`invalid canvas provided`);
      
-  //    }
+     }
 
-  //    this.canvas = _canvas;
-  //    this.ctx = this.canvas.getContext('2d');
-  // }
+     this.canvas = _canvas;
+     this.ctx = this.canvas.getContext('2d');
+   }
 
   /**
    * This function takes a difficulty string as a parameter
