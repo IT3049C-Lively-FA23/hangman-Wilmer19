@@ -19,6 +19,7 @@ const resetGame = document.getElementById(`resetGame`);
 let canvas = document.getElementById(`hangmanCanvas`);
 
 
+
 // The following Try-Catch Block will catch the errors thrown
 try {
   // Instantiate a game Object using the Hangman class.
@@ -30,9 +31,9 @@ try {
   //       2. show the gameWrapper
   //       3. call the game getWordHolderText and set it to the wordHolderText
   //       4. call the game getGuessesText and set it to the guessesText
-  difficultySelectForm.addEventListener(`submit`, function (event) {
+  difficultySelectForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    const difficultySelect = document.getElementById(`difficulty`).value;
+    const difficultySelect = document.getElementById('difficulty').value;
     game.start(difficultySelect, function(){
       startWrapper.style.display = 'none';
       gameWrapper.style.display = 'block';
