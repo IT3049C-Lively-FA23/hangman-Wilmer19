@@ -1,12 +1,13 @@
 class Hangman {
-  constructor(_canvas) {
-    if (!_canvas) {
-      throw new Error(`invalid canvas provided`);
-    }
+  // constructor(_canvas) {
+  //    if (!_canvas) {
+  //      throw new Error(`invalid canvas provided`);
+     
+  //    }
 
-    this.canvas = _canvas;
-    this.ctx = this.canvas.getContext(`2d`);
-  }
+  //    this.canvas = _canvas;
+  //    this.ctx = this.canvas.getContext('2d');
+  // }
 
   /**
    * This function takes a difficulty string as a parameter
@@ -99,17 +100,17 @@ class Hangman {
    * if the number wrong guesses is 6, then also set isOver to true and didWin to false.
    */
   onWrongGuess() {
-    if (wrongGuesses === 1){
+    if (this.guessInput === 1){
       drawHead();
-    } else if (wrongGuesses === 2){
+    } else if (this.guessInput === 2){
       drawBody();
-    } else if (wrongGuesses === 3){
+    } else if (this.guessInput === 3){
       drawRightArm();
-    } else if (wrongGuesses === 4){
+    } else if (this.guessInput === 4){
       drawLeftArm();
-    } else if (wrongGuesses === 5){
+    } else if (this.guessInput === 5){
       drawRightLeg();
-    } else if (wrongGuesses === 6){
+    } else if (this.guessInput === 6){
       drawLeftLeg();
       isOver = true;
       didWin = false;
@@ -123,7 +124,7 @@ class Hangman {
    */
   getWordHolderText(word, guesses) {
     let placeholder = "";
-    for (let letter of word){
+    for (let letter of this.word){
       if (guesses.includes(letter)){
         placeholder += letter + " ";
       } else {
@@ -160,15 +161,27 @@ class Hangman {
     this.ctx.fillRect(10, 410, 175, 10); // Base
   }
 
-  drawHead() {}
+  drawHead() {
+    draw (60, 5, 60, 15);
+  }
 
-  drawBody() {}
+  drawBody() {
+    draw (60, 36, 60, 70);
+  }
 
-  drawLeftArm() {}
+  drawLeftArm() {
+    draw (60, 46, 20, 50);
+  }
 
-  drawRightArm() {}
+  drawRightArm() {
+    draw (60, 46, 100, 50);
+  }
 
-  drawLeftLeg() {}
+  drawLeftLeg() {
+    draw (60, 70, 20, 100);
+  }
 
-  drawRightLeg() {}
+  drawRightLeg() {
+    draw (60, 70, 100, 100);
+  }
 }
